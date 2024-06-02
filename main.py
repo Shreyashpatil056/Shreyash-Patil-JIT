@@ -61,4 +61,4 @@ else:
 
 
 # Append final message to file after input is processed
-append_to_file("<------------- This World Shall Know Pain ----------->\n")
+# append_to_file("<------------- This World Shall Know Pain ----------->\n")
