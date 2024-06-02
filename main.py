@@ -1,6 +1,8 @@
 # Author: Shreyash Shriram Patil
 # Date: 2nd June 2024
 
+import sys
+
 def na():
     print("NO")
     
@@ -24,32 +26,39 @@ def append_to_file(content):
     with open("output.txt", "a") as f:
         f.write(content + "\n")
     
-# Number of rounds
-n = 200
 
 kyabola_usne = 'idk bro'
-i = 0
 
-# Loop through the rounds
-while i < n:
-    # Input handling
-    input_string = input()
-    rnd, res = input_string.split()
-    rnd = int(rnd)
-    i += 1
+# Input handling
+# input_string = input()
+# rnd, res = input_string.split()
+# rnd = int(rnd)
 
-    kyabola_usne = res
-    # Append input to file
-    append_to_file(input_string)
-    
-    if i == 1:
-        ha()
-    elif i >= n - 1:
-        na()
-    else:
-        bol(kyabola_usne)
-        
-    
+# rnd = int(input())
+# res = input()
 
-# Append final message to file after all inputs are taken
-append_to_file("<------------- This World Shall Know Pain ---------->\n")
+rnd = int(sys.argv[1])
+res = sys.argv[2]
+
+input_string = str(rnd) + " " + res
+
+if(res != "YES" and res != "NO" and res != "NONE"):
+    res = 'NO'
+
+# Update kyabola_usne with res
+kyabola_usne = res
+
+# Append input to file
+append_to_file(input_string)
+
+# Process the input
+if rnd == 1:
+    ha()
+elif rnd >= 199:
+    na()
+else:
+    bol(kyabola_usne)
+
+
+# Append final message to file after input is processed
+append_to_file("<------------- This World Shall Know Pain ----------->\n")
